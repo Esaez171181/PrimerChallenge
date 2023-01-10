@@ -1,0 +1,91 @@
+body{
+    width: 940px;    
+    background: lightsteelblue;
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin: 10px 40px;   
+}
+
+.contenido{
+    display: block;
+    width: 940px;
+    margin: 0  auto;
+    padding: 80px; /*es para el espaciamiento interno de cada elemento*/
+}
+
+
+.ingreso{
+    display: inline-block;
+    /*por defecto display ocupa el 100%, pero al usar esta ropiedad 
+    nos permite colocar las listas horizontalmente y configurar los espacio.
+    hay otros como display block y display inline*/
+    text-align: center;
+    width: 30%; /*que cada elemento me ocupe el 30% del espacio total*/
+    vertical-align: top;
+    /*background: #CCCCCC;*/
+    margin: 0  1.5%;
+    padding: 50px  50px;
+    box-sizing: border-box; /*limita los bordes de cada elemento segun el total de pixeles que son los 940 defidos*/
+    /* con estas 3 propiedades definimos el borde solido color negro de cada elemento*/
+    border-color: lightsteelblue;
+    border-width: 2px;
+    border-style: solid;
+    /*para tener el visual redondeado en los bordes de cada elemento*/
+    border-radius: 10px;
+}
+
+#ingreso-texto{
+    width: 300px;
+    outline: none;   
+    background-color:lightsteelblue;
+    border: 0;
+    font-size: larger;
+    size: 20;
+}
+
+.muestra{
+    display: inline-block;
+    /*por defecto display ocupa el 100%, pero al usar esta ropiedad 
+    nos permite colocar las listas horizontalmente y configurar los espacio.
+    hay otros como display block y display inline*/
+    text-align: center;
+    width: 30%; /*que cada elemento me ocupe el 30% del espacio total*/
+    vertical-align: top;
+    background: white;
+    margin: 0  15%;
+    padding: 50px  50px;
+    box-sizing: border-box; /*limita los bordes de cada elemento segun el total de pixeles que son los 940 defidos*/
+    /* con estas 3 propiedades definimos el borde solido color negro de cada elemento*/
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+    /*para tener el visual redondeado en los bordes de cada elemento*/
+    border-radius: 10px;
+}
+
+#salida-texto{
+    width: 200px;
+    outline: none;   
+    background-color:#fffffe;
+    border: 0;
+    font-size: larger;
+    color: black;
+    resize: vertical;
+}
+
+footer{
+    background: lightsteelblue;
+    text-align: center;
+    padding: 40px;
+}
+
+.copyright{
+    color: #ffffff;
+    font-size: 70%;
+    margin: 20px;
+}
+

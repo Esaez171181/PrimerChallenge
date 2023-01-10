@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+
+<html lang="es">  
+
+   <head>    
+        <meta charset="UTF-8">  
+        <meta name="viewport" content="width=device-width"> 
+        <title>Engriptador/Desencriptador</title>
+        <link rel="stylesheet" href="reset.css">      
+        <link rel="stylesheet" href="encripta.css">
+   </head>    
+
+   <body>
+
+        <header>
+            <div> 
+                <img class="logo" src="imagenes/logo-alura.jpg">     
+            </div>  
+        </header>         
+
+        <main>
+          <div id="adapta">
+               <ul class="contenido">
+                  <li class="ingreso">
+                  <h2></h2>   
+                  <input type="text" id="ingreso-texto" autofocus required placeholder="Ingrese el texto Aqui..." autocomplete="off">
+                  <br><br><br><br><br><br><br><br><br><br>
+                  <button id="encripta">Encriptar!</button>
+                  <button id="desencriptar">Desencriptar!</button>
+                  </li>
+                  <li class="muestra">
+                  <h2></h2>   
+                  <input type="text" id="salida-texto" readonly> 
+                  <br><br><br><br><br><br><br><br><br><br>
+                  <button id="copiar">Copiar</button>       
+                  </li>
+               </ul>
+            </div>               
+        </main>
+
+        <footer>
+            <p class="copyright">&Copy Copyright  EnriqueSáez-2022</p> 
+        </footer>
+   </body>
+
+</html>
+
+<script>
+      var arreglo = [];
+      var arreglodos = [];
+
+      function imprimeMensaje(arreglo){
+        document.getElementById('salida-texto').value=arreglo.join("");
+          
+     }
+
+     function imprimeMensajedos(arreglodos){
+        document.getElementById('salida-texto').value=arreglodos.join("");
+        input.value = "";
+     }
+
+      function copiaimprimeMensaje(){
+        document.getElementById('ingreso-texto').value=document.getElementById('salida-texto').value;
+        document.getElementById('salida-texto').value = "";              
+     }  
+
+    function Engripta() {
+       arreglo = Array.from(input.value.toLowerCase());
+       document.getElementById('ingreso-texto').value=arreglo.join("");
+      
+       for(var posicion = 0; posicion < input.value.length; posicion ++) {
+
+           if(arreglo[posicion] == "a") {  arreglo[posicion] = "ai"; }   else
+           if(arreglo[posicion] == "e") {  arreglo[posicion] = "enter"; } else
+           if(arreglo[posicion] == "i") {  arreglo[posicion] = "imes";  } else
+           if(arreglo[posicion] == "o") {  arreglo[posicion] = "ober"; } else
+           if(arreglo[posicion] == "u") {  arreglo[posicion] = "ufat"; }  
+ 
+       }
+       
+       imprimeMensaje(arreglo);                                      
+    }
+    
+    function Desencripta() {
+       arreglodos = arreglo.slice();
+            
+       for(var pos = 0; pos < arreglodos.length; pos++) {
+
+           if(arreglodos[pos] == "ai") {  arreglodos[pos] = "a"; }   else
+           if(arreglodos[pos] == "enter") {  arreglodos[pos] = "e"; } else
+           if(arreglodos[pos] == "imes") {  arreglodos[pos] = "i";  } else
+           if(arreglodos[pos] == "ober") {  arreglodos[pos] = "o"; } else
+           if(arreglodos[pos] == "ufat") {  arreglodos[pos] = "u"; }  
+
+       }
+       
+       imprimeMensajedos(arreglodos);                                      
+    }
+     
+    var input =  document.querySelector("input");
+    input.focus();
+    var button = document.querySelector("button"); 
+    button.onclick = Engripta;
+       
+    document.getElementById('desencriptar').onclick = function(){
+      Desencripta();
+    }
+
+    document.getElementById('copiar').onclick = function(){
+      copiaimprimeMensaje();
+    }
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
